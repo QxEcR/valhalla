@@ -1,3 +1,11 @@
+com/mobileproject/valhalla/BuildConfig.java
+ com.mobileproject.valhalla.BuildConfig
+com/mobileproject/valhalla/utils/GoogleClient.java
+ com.mobileproject.valhalla.utils.GoogleClient
+com/mobileproject/valhalla/utils/APIClient.java
+ com.mobileproject.valhalla.utils.APIClient
+com/mobileproject/valhalla/utils/Rank.java
+ com.mobileproject.valhalla.utils.Rank
 com/mobileproject/valhalla/MainActivity.java
  com.mobileproject.valhalla.MainActivity
 com/mobileproject/valhalla/LeaderboardActivity.java
@@ -11,16 +19,8 @@ com/mobileproject/valhalla/SplashScreenActivity.java
  com.mobileproject.valhalla.SplashScreenActivity
  com.mobileproject.valhalla.SplashScreenActivity$1
  com.mobileproject.valhalla.SplashScreenActivity$2
-com/mobileproject/valhalla/utils/GoogleClient.java
- com.mobileproject.valhalla.utils.GoogleClient
-com/mobileproject/valhalla/utils/Rank.java
- com.mobileproject.valhalla.utils.Rank
-com/mobileproject/valhalla/utils/APIClient.java
- com.mobileproject.valhalla.utils.APIClient
 com/mobileproject/valhalla/ProfileActivity.java
  com.mobileproject.valhalla.ProfileActivity
  com.mobileproject.valhalla.ProfileActivity$1
  com.mobileproject.valhalla.ProfileActivity$1$1
  com.mobileproject.valhalla.ProfileActivity$2
-com/mobileproject/valhalla/BuildConfig.java
- com.mobileproject.valhalla.BuildConfig

@@ -2558,6 +2558,7 @@ int drawable notification_tile_bg 0x7f0800b2
 int drawable notify_panel_notification_icon_bg 0x7f0800b3
 int drawable overwatch 0x7f0800b4
 int drawable profile 0x7f0800b5
+int drawable sendmessage 0x7f0800bb
 int drawable test_custom_background 0x7f0800b6
 int drawable test_level_drawable 0x7f0800b7
 int drawable tooltip_frame_dark 0x7f0800b8

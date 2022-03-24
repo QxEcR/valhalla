@@ -2559,6 +2559,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable overwatch
 drawable profile
+drawable sendmessage
 drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
