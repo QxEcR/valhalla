@@ -168,6 +168,7 @@ public class LeaderboardActivity extends AppCompatActivity {
 
                                 // add the new rank to the ranks array
                                 ranks.add(new Rank(username, rank));
+
                             }// end of for loop
 
                             // now use the main UI thread to update the recycler view with the data

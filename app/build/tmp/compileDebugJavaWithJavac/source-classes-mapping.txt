@@ -6,21 +6,21 @@ com/mobileproject/valhalla/utils/APIClient.java
  com.mobileproject.valhalla.utils.APIClient
 com/mobileproject/valhalla/utils/Rank.java
  com.mobileproject.valhalla.utils.Rank
+com/mobileproject/valhalla/ProfileActivity.java
+ com.mobileproject.valhalla.ProfileActivity
+ com.mobileproject.valhalla.ProfileActivity$1
+ com.mobileproject.valhalla.ProfileActivity$1$1
+ com.mobileproject.valhalla.ProfileActivity$2
+com/mobileproject/valhalla/SplashScreenActivity.java
+ com.mobileproject.valhalla.SplashScreenActivity
+ com.mobileproject.valhalla.SplashScreenActivity$1
+ com.mobileproject.valhalla.SplashScreenActivity$2
+com/mobileproject/valhalla/utils/LeaderboardRankAdapter.java
+ com.mobileproject.valhalla.utils.LeaderboardRankAdapter
+ com.mobileproject.valhalla.utils.LeaderboardRankAdapter$RankHolder
 com/mobileproject/valhalla/MainActivity.java
  com.mobileproject.valhalla.MainActivity
 com/mobileproject/valhalla/LeaderboardActivity.java
  com.mobileproject.valhalla.LeaderboardActivity
  com.mobileproject.valhalla.LeaderboardActivity$1
  com.mobileproject.valhalla.LeaderboardActivity$1$1
-com/mobileproject/valhalla/utils/LeaderboardRankAdapter.java
- com.mobileproject.valhalla.utils.LeaderboardRankAdapter
- com.mobileproject.valhalla.utils.LeaderboardRankAdapter$RankHolder
-com/mobileproject/valhalla/SplashScreenActivity.java
- com.mobileproject.valhalla.SplashScreenActivity
- com.mobileproject.valhalla.SplashScreenActivity$1
- com.mobileproject.valhalla.SplashScreenActivity$2
-com/mobileproject/valhalla/ProfileActivity.java
- com.mobileproject.valhalla.ProfileActivity
- com.mobileproject.valhalla.ProfileActivity$1
- com.mobileproject.valhalla.ProfileActivity$1$1
- com.mobileproject.valhalla.ProfileActivity$2
