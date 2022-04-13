@@ -6,10 +6,13 @@ import com.stfalcon.chatkit.commons.models.IUser;
 
 import java.util.Date;
 
-public class Message implements IMessage {
+// this class will make the connection between the CometChat ( backend ) messages and ChatKit ( frontend ) messages
+// by implementing the IMessage interface from ChatKit and receiving a TextMessage object form CometChat
+// and convert the backend message to frontend message
+public class MessageBridge implements IMessage {
     private TextMessage textMessage;
 
-    public Message(TextMessage textMessage) {
+    public MessageBridge(TextMessage textMessage) {
         this.textMessage = textMessage;
     }
 
@@ -25,7 +28,7 @@ public class Message implements IMessage {
 
     @Override
     public IUser getUser() {
-        return null;
+        return new UserBridge(textMessage.getSender());
     }
 
     @Override

@@ -46,4 +46,11 @@ dependencies {
     //api and json
     implementation("com.squareup.okhttp3:okhttp:3.9.1")
 
+    // CometChat for chat backend
+    implementation 'com.cometchat:pro-android-chat-sdk:2.4.1'
+
+    // Chatkit and picasso for chat UI
+    implementation 'com.github.stfalcon:chatkit:0.3.3'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

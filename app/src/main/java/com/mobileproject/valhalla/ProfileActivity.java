@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.mobileproject.valhalla.utils.APIClient;
-import com.mobileproject.valhalla.utils.GoogleClient;
+import com.mobileproject.valhalla.utils.APIs.APIClient;
+import com.mobileproject.valhalla.utils.APIs.GoogleClient;
 
 import org.json.JSONArray;
 import org.json.JSONException;

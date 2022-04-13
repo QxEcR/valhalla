@@ -6,13 +6,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Spinner;
 
-import com.mobileproject.valhalla.utils.APIClient;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.mobileproject.valhalla.utils.APIs.APIClient;
 
 import java.io.IOException;
 import java.util.Objects;

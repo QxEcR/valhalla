@@ -1,4 +1,4 @@
-package com.mobileproject.valhalla.utils;
+package com.mobileproject.valhalla.utils.APIs;
 
 import android.content.SharedPreferences;
 

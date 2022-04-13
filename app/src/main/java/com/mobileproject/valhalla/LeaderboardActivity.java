@@ -12,10 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.mobileproject.valhalla.utils.APIClient;
-import com.mobileproject.valhalla.utils.GoogleClient;
-import com.mobileproject.valhalla.utils.LeaderboardRankAdapter;
-import com.mobileproject.valhalla.utils.Rank;
+import com.mobileproject.valhalla.utils.APIs.APIClient;
+import com.mobileproject.valhalla.utils.APIs.CometChatClient;
+import com.mobileproject.valhalla.utils.APIs.GoogleClient;
+import com.mobileproject.valhalla.utils.Adapters.LeaderboardRankAdapter;
+import com.mobileproject.valhalla.utils.Models.Rank;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -79,6 +80,7 @@ public class LeaderboardActivity extends AppCompatActivity {
         fab = findViewById(R.id.fab);
         leaderboardPic = findViewById(R.id.leaderboard_pic);
         leaderGameName = findViewById(R.id.leader_game_name);
+
 
         //check if user is authenticated
         if (googleClient.isSignedIn()) {
@@ -205,8 +207,28 @@ public class LeaderboardActivity extends AppCompatActivity {
         recyclerViewForLeaderboard.setAdapter(leaderboardRankAdapter);
     }
 
-    // not implemented yet
+    // given the gameName, return the corresponded group ID from the CometChatClint
+    // this group ID will be used to identify the chat and mix the messages
+    private String getChatGroupID() {
+        switch (gameName){
+            case "cod":
+                return CometChatClient.getGroupIDForCod();
+            case "valo":
+                return CometChatClient.getGroupIDForValo();
+            case "fort":
+                return CometChatClient.getGroupIDForFort();
+            case "ow":
+                return CometChatClient.getGroupIDForOW();
+        }
+        return null;
+    }
+
     private void directToChatPage(){
+        // since the chat page need only the group id from this page
+        // the intent will save the group id and start the chat page
+        Intent intent = new Intent(this, ChatActivity.class);
+        intent.putExtra("GROUP_ID", getChatGroupID());
+        startActivity(intent);
     }
 
     private void startMainActivity() {

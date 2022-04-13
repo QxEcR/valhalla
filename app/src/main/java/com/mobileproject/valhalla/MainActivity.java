@@ -4,10 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cometchat.pro.constants.CometChatConstants;
+import com.cometchat.pro.core.AppSettings;
+import com.cometchat.pro.core.CometChat;
+import com.cometchat.pro.exceptions.CometChatException;
+import com.cometchat.pro.models.GroupMember;
+import com.cometchat.pro.models.User;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.ApiException;
@@ -16,9 +23,19 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import com.mobileproject.valhalla.utils.GoogleClient;
+import com.mobileproject.valhalla.utils.APIs.CometChatClient;
+import com.mobileproject.valhalla.utils.APIs.GoogleClient;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Objects;
+
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -66,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
             // 3. set the floating action button to direct to profile page
             fab.setOnClickListener(v -> directToProfilePage());
 
+            // 4. start the connection with cometChat ( the backend for the chatting system )
+            initConnectionCometChat();
+
         } else {
             // if user is not authenticated do the following
 
@@ -74,6 +94,82 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    private void initConnectionCometChat() {
+        // define the settings of the chat API
+        AppSettings appSettings = new AppSettings.AppSettingsBuilder().subscribePresenceForAllUsers().setRegion(CometChatClient.getRegion()).build();
+
+        // start the connection using the settings ^ and the AppID from the CometChatClientClass
+        CometChat.init(this, CometChatClient.getAppID(),appSettings, new CometChat.CallbackListener<String>() {
+            @Override
+            public void onSuccess(String successMessage) {
+                // if the connection is set, login the current user
+                loginUserForCometChat();
+            }
+            @Override
+            public void onError(CometChatException e) {
+                Toast.makeText(getApplicationContext(), "An error occurred, The chat functionality is not available for this session", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void loginUserForCometChat() {
+        // check if the cometChat user is not logged in
+        if (CometChat.getLoggedInUser() == null) {
+            // login using the User UID and the cometChat API key
+            CometChat.login(googleClient.getFirebaseAuth().getUid(), CometChatClient.getAPIKey(), new CometChat.CallbackListener<User>() {
+
+                @Override
+                public void onSuccess(User user) {
+                    System.out.println("Login with cometChat is Successful : " + user.toString());
+                }
+
+                // if user not found, create a new user
+                @Override
+                public void onError(CometChatException e) {
+                    registerUserForCometChat();
+                    return;
+                }
+            });
+        } else {
+            System.out.println("USER ALREADY LOGGED IN");
+        }
+    }
+
+    private void registerUserForCometChat() {
+        // the API url provided from the CometChatCLient class
+        String postURL = CometChatClient.getRegisterUrl();
+
+        // build the request body and add the data provided on the parameter to it
+        RequestBody body = new FormBody.Builder()
+                .add("uid", googleClient.getFirebaseAuth().getUid())
+                .add("name", googleClient.getUsername())
+                .add("avatar", googleClient.getFirebaseAuth().getCurrentUser().getPhotoUrl().toString())
+                .build();
+
+        // build the request using the url and the body using the post method
+        Request request = new Request.Builder()
+                .url(postURL)
+                .addHeader("appId", CometChatClient.getAppID())
+                .addHeader("apiKey", CometChatClient.getAPIKey())
+                .addHeader("Content-Type", "application/json")
+                .addHeader("Accept", "application/json")
+                .post(body)
+                .build();
+
+        // since we can't run requests on the main UI thread we need to run it on a new thread
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    // execute the call using the newCall method from the OkHttpClient class to send the data to the API
+                    new OkHttpClient().newCall(request).execute();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     // show the google login intent using the googleClient object

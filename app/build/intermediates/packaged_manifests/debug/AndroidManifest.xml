@@ -23,6 +23,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.Valhalla" >
         <activity
+            android:name="com.mobileproject.valhalla.ChatActivity"
+            android:exported="false" />
+        <activity
             android:name="com.mobileproject.valhalla.MainActivity"
             android:exported="false" />
         <activity
@@ -101,6 +104,10 @@
             android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
             android:visibleToInstantApps="true" />
 
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.mobileproject.valhalla.com.squareup.picasso"
+            android:exported="false" />
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
             android:authorities="com.mobileproject.valhalla.firebaseinitprovider"

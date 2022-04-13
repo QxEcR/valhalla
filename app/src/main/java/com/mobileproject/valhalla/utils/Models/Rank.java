@@ -1,4 +1,4 @@
-package com.mobileproject.valhalla.utils;
+package com.mobileproject.valhalla.utils.Models;
 
 // this class is for holding the data of the leaderboard
 public class Rank {

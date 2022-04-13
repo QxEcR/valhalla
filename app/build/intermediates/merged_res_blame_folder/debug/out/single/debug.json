@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.png.flat",
@@ -66,6 +66,10 @@
     {
         "merged": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_chat.xml.flat",
+        "source": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\src\\main\\res\\layout\\activity_chat.xml"
     },
     {
         "merged": "C:\\Users\\Damas\\AndroidStudioProjects\\Valhalla\\app\\build\\intermediates\\merged_res\\debug\\drawable_fn.png.flat",

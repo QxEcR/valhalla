@@ -1,4 +1,4 @@
-package com.mobileproject.valhalla.utils;
+package com.mobileproject.valhalla.utils.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobileproject.valhalla.R;
+import com.mobileproject.valhalla.utils.Models.Rank;
 
 import java.util.ArrayList;
 
